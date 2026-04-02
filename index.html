@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Torrealba — Músico · Productora · DJ</title>
+  <meta name="description" content="Nicole Torrealba — Músico, productora y cantante. Soul, rock, hip-hop y R&B. Caracas · Barcelona. También conocida como DJ Nicole.AIFF.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F2EDE4;
+      --black: #0D0D0D;
+      --dark: #161410;
+      --mid: #2A2520;
+      --accent: #C8A96E;
+      --accent2: #8B5A3C;
+      --muted: #6B6560;
+      --border: rgba(200,169,110,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Syne', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,13,0.93);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      font-weight: 300;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--cream);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .hero-left {
+      padding: 5rem 3rem 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-right: 0.5px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-aka {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .hero-bio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(242,237,228,0.7);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+    .tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+    }
+    .hero-ctas { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      background: var(--accent);
+      color: var(--black);
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--cream);
+      border: 0.5px solid var(--border);
+      cursor: pointer;
+      font-weight: 400;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero-right {
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .hero-img-main {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .hero-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 55%, rgba(13,13,13,0.55) 100%);
+    }
+    .hero-img-label {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-stat {
+      padding: 1.5rem;
+      border-right: 0.5px solid var(--border);
+      border-top: 0.5px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      overflow: hidden;
+      border-bottom: 0.5px solid var(--border);
+      padding: 0.75rem 0;
+      background: rgba(200,169,110,0.03);
+    }
+    .marquee-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-item {
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 1.5rem;
+      flex-shrink: 0;
+    }
+    .marquee-dot { color: var(--accent); margin: 0 0.3rem; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 3rem 2rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .section-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* ── EVENTS ── */
+    #events { border-bottom: 0.5px solid var(--border); }
+    .events-intro {
+      padding: 1.5rem 2rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .bandsintown-wrapper {
+      padding: 1.5rem 2rem 2.5rem;
+    }
+    /* Force Bandsintown widget text to match dark theme */
+    .bandsintown-wrapper .bit-widget-initializer { width: 100% !important; }
+    .bandsintown-wrapper *,
+    .bandsintown-wrapper p,
+    .bandsintown-wrapper span,
+    .bandsintown-wrapper div,
+    .bandsintown-wrapper a,
+    .bandsintown-wrapper li,
+    .bandsintown-wrapper .bit-date,
+    .bandsintown-wrapper .bit-location,
+    .bandsintown-wrapper .bit-event__date,
+    .bandsintown-wrapper .bit-event__location,
+    .bandsintown-wrapper .bit-event__venue-location,
+    .bandsintown-wrapper .bit-event__title,
+    .bandsintown-wrapper .bit-venue,
+    .bandsintown-wrapper .bit-city,
+    .bandsintown-wrapper .bit-country,
+    .bandsintown-wrapper [class*="bit-"] {
+      color: #F2EDE4 !important;
+    }
+    .bandsintown-wrapper [class*="bit-"] a,
+    .bandsintown-wrapper a[class*="bit-"] {
+      color: #C8A96E !important;
+    }
+    .bandsintown-wrapper [class*="bit-event"],
+    .bandsintown-wrapper [class*="bit-show"],
+    .bandsintown-wrapper [class*="bit-list"] {
+      background: transparent !important;
+      border-color: rgba(200,169,110,0.2) !important;
+    }
+
+    /* ── MUSIC ── */
+    #music { border-bottom: 0.5px solid var(--border); }
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 0.5px solid var(--border);
+    }
+    .album-card {
+      border-right: 0.5px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .album-card:last-child { border-right: none; }
+    .album-cover {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .album-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: grayscale(20%);
+    }
+    .album-card:hover .album-cover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+    .album-cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13,13,13,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .album-card:hover .album-cover-overlay { opacity: 1; }
+    .play-btn {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.1rem;
+      padding-left: 3px;
+      text-decoration: none;
+    }
+    .album-info {
+      padding: 1rem 1.25rem 1.5rem;
+      border-top: 0.5px solid var(--border);
+    }
+    .album-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+    .album-year {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .album-tracks {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(242,237,228,0.38);
+      line-height: 1.5;
+    }
+    .spotify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--border);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .spotify-btn:hover { border-color: var(--accent); }
+
+    /* ── CONTACT ── */
+    #contact { padding-bottom: 5rem; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 0.5px solid var(--border);
+    }
+    .contact-left {
+      padding: 3rem 3rem 3rem 2rem;
+      border-right: 0.5px solid var(--border);
+    }
+    .contact-pitch {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--cream);
+      margin-bottom: 2.5rem;
+    }
+    .contact-pitch em { color: var(--accent); font-style: italic; }
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .contact-link-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 70px;
+      flex-shrink: 0;
+    }
+    .contact-link-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .contact-link-val:hover { opacity: 0.7; }
+    .contact-right { padding: 3rem 2rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-input {
+      background: transparent;
+      border: 0.5px solid var(--border);
+      color: var(--cream);
+      padding: 0.7rem 0.9rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus { border-color: var(--accent); }
+    .form-input::placeholder { color: rgba(107,101,96,0.5); }
+    select.form-input {
+      background: var(--black);
+      appearance: none;
+      cursor: pointer;
+    }
+    select.form-input option { background: var(--black); }
+    textarea.form-input {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+    .form-submit {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: var(--black);
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: #d4b87a; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .footer-copy {
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: rgba(107,101,96,0.45);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.2rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: rgba(13,13,13,0.97);
+        padding: 1.5rem 1.2rem;
+        gap: 1.2rem;
+        border-bottom: 0.5px solid var(--border);
+      }
+      .nav-hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left {
+        padding: 3rem 1.2rem 2.5rem;
+        border-right: none;
+        border-bottom: 0.5px solid var(--border);
+      }
+      .hero-right { grid-template-rows: 60vw auto; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .albums-grid { grid-template-columns: 1fr; }
+      .album-card { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 0.5px solid var(--border); padding: 2rem 1.2rem; }
+      .contact-right { padding: 2rem 1.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .section-header { padding: 2rem 1.2rem 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
+      .bandsintown-wrapper { padding: 1.5rem 1.2rem 2rem; }
+      .events-intro { padding: 1.5rem 1.2rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Nicole <span>Torrealba</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#events" onclick="closeMenu()">Eventos</a></li>
+    <li><a href="#music" onclick="closeMenu()">Música</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contacto</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Caracas · Barcelona · En gira</div>
+    <h1 class="hero-name">Nicole<br><em>Torrealba</em></h1>
+    <p class="hero-aka">También conocida como · DJ Nicole.AIFF</p>
+    <p class="hero-bio">Músico, productora y cantante nacida en Caracas, afincada en Barcelona. Soul, rock, hip-hop y R&B que se fusionan en canciones íntimas y sin género. Desde el estudio propio hasta los escenarios de Europa.</p>
+    <div class="hero-tags">
+      <span class="tag">Soul</span>
+      <span class="tag">Rock</span>
+      <span class="tag">R&B</span>
+      <span class="tag">Hip-Hop</span>
+      <span class="tag">DJ Sets</span>
+      <span class="tag">The Groove Quest</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#events" class="btn-primary">Ver próximos eventos</a>
+      <a href="#music" class="btn-secondary">Escuchar música</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-main">
+      <img src="img/photo.png" alt="Nicole Torrealba">
+      <div class="hero-img-overlay"></div>
+      <div class="hero-img-label">Nicole Torrealba · Barcelona</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">2024</div>
+        <div class="hero-stat-label">Debut · Aguardiente</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">BCN</div>
+        <div class="hero-stat-label">Base · Barcelona</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Soul <span class="marquee-dot">·</span> Rock <span class="marquee-dot">·</span> R&B <span class="marquee-dot">·</span> Hip-Hop <span class="marquee-dot">·</span> DJ Sets <span class="marquee-dot">·</span> The Groove Quest <span class="marquee-dot">·</span> Aguardiente <span class="marquee-dot">·</span> Motherfunker <span class="marquee-dot">·</span> Hope//Less Romantic <span class="marquee-dot">·</span> Caracas <span class="marquee-dot">·</span> Barcelona <span class="marquee-dot">·</span></span>
+    <span class="marquee-item" aria-hidden="true">Soul <span class="marquee-dot">·</span> Rock <span class="marquee-dot">·</span> R&B <span class="marquee-dot">·</span> Hip-Hop <span class="marquee-dot">·</span> DJ Sets <span class="marquee-dot">·</span> The Groove Quest <span class="marquee-dot">·</span> Aguardiente <span class="marquee-dot">·</span> Motherfunker <span class="marquee-dot">·</span> Hope//Less Romantic <span class="marquee-dot">·</span> Caracas <span class="marquee-dot">·</span> Barcelona <span class="marquee-dot">·</span></span>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="section-header">
+    <h2 class="section-title">Próximos eventos</h2>
+    <span class="section-num">01 / Agenda</span>
+  </div>
+  <p class="events-intro">Conciertos en directo y sesiones como DJ Nicole.AIFF</p>
+  <div class="bandsintown-wrapper">
+    <div
+      class="bit-widget-initializer"
+      data-artist-name="Nicole Torrealba"
+      data-display-local-dates="false"
+      data-display-past-dates="false"
+      data-auto-style="false"
+      data-font-color="#F2EDE4"
+      data-button-label-capitalization="capitalize"
+      data-header-font-color="#C8A96E"
+      data-background-color="transparent"
+      data-separator-color="rgba(200,169,110,0.2)"
+      data-display-limit="10"
+      data-link-color="#C8A96E"
+      data-display-lineup="true"
+      data-display-start-time="true"
+      data-social-share-icon="false"
+      data-display-attend-count="false"
+      data-language="es"
+      data-widget-id="bit-widget-initializer"
+    ></div>
+    <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="section-header">
+    <h2 class="section-title">Discografía</h2>
+    <span class="section-num">02 / Música</span>
+  </div>
+  <div class="albums-grid">
+
+    <div class="album-card">
+      <div class="album-cover">
+        <img src="img/aguardiente.png" alt="Portada Aguardiente">
+        <div class="album-cover-overlay">
+          <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="play-btn" aria-label="Escuchar en Spotify">▶</a>
+        </div>
+      </div>
+      <div class="album-info">
+        <div class="album-title">Aguardiente</div>
+        <div class="album-year">2024 · Álbum debut</div>
+        <div class="album-tracks">Identidad · Emoción · Transformación</div>
+        <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="spotify-btn">Escuchar en Spotify →</a>
+      </div>
+    </div>
+
+    <div class="album-card">
+      <div class="album-cover">
+        <img src="img/hopeless.png" alt="Portada Hope//Less Romantic">
+        <div class="album-cover-overlay">
+          <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="play-btn" aria-label="Escuchar en Spotify">▶</a>
+        </div>
+      </div>
+      <div class="album-info">
+        <div class="album-title">Hope//Less Romantic</div>
+        <div class="album-year">EP</div>
+        <div class="album-tracks">hope//less romantic · think of you · 2 fast</div>
+        <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="spotify-btn">Escuchar en Spotify →</a>
+      </div>
+    </div>
+
+    <div class="album-card">
+      <div class="album-cover">
+        <img src="img/motherfunker.png" alt="Portada Motherfunker">
+        <div class="album-cover-overlay">
+          <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="play-btn" aria-label="Escuchar en Spotify">▶</a>
+        </div>
+      </div>
+      <div class="album-info">
+        <div class="album-title">Motherfunker</div>
+        <div class="album-year">Single</div>
+        <div class="album-tracks">Soulful · Groove · Bajo eléctrico</div>
+        <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="spotify-btn">Escuchar en Spotify →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <h2 class="section-title">Contacto</h2>
+    <span class="section-num">03 / Booking & prensa</span>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p class="contact-pitch">Para <em>bookings</em>, prensa,<br>colaboraciones o<br>simplemente para decir hola.</p>
+      <div class="contact-links">
+        <div class="contact-link-item">
+          <span class="contact-link-label">Email</span>
+          <a href="mailto:nix.aiff@gmail.com" class="contact-link-val">nix.aiff@gmail.com</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="contact-link-label">Instagram</span>
+          <a href="https://instagram.com/nicole.aiff" target="_blank" rel="noopener" class="contact-link-val">@nicole.aiff</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="contact-link-label">Spotify</span>
+          <a href="https://open.spotify.com/intl-de/artist/4EKf15q5DO7leKHh71dpQY" target="_blank" rel="noopener" class="contact-link-val">Nicole Torrealba</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="contact-link-label">Radio</span>
+          <a href="https://instagram.com/nicole.aiff" target="_blank" rel="noopener" class="contact-link-val">The Groove Quest</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form" id="contactForm" name="contact">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Nombre</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="type">Tipo de consulta</label>
+          <select class="form-input" id="type" name="type">
+            <option>Booking — Concierto</option>
+            <option>Booking — DJ Set</option>
+            <option>Prensa</option>
+            <option>Colaboración</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Mensaje</label>
+          <textarea class="form-input" id="message" name="message" placeholder="Cuéntame..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar mensaje →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Nicole Torrealba · DJ Nicole.AIFF · The Groove Quest</div>
+  <div class="footer-copy">© 2025 · Caracas · Barcelona</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/mreoaqkp', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        btn.textContent = 'Mensaje enviado ✓';
+        btn.style.background = '#4a7c59';
+        btn.style.color = '#fff';
+        form.reset();
+      } else {
+        btn.textContent = 'Error al enviar — inténtalo de nuevo';
+        btn.style.background = '#7c4a4a';
+        btn.style.color = '#fff';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error de red — inténtalo de nuevo';
+      btn.style.background = '#7c4a4a';
+      btn.style.color = '#fff';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
